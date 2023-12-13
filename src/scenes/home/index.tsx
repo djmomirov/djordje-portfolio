@@ -6,6 +6,7 @@ import SponsorFortune from "@/assets/SponsorFortune.png";
 import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { classNames } from "@/utils/helpers";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -35,13 +36,6 @@ const Home = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            {/* <div className="relative">
-              <div>
-                <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-portfoliotext">
-                  <div className="text-[57px]">Djordje Momirov</div>
-                </div>
-              </div>
-            </div> */}
             <div className="relative">
               <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-portfoliotext">
                 <div className="text-[57px]">Djordje Momirov</div>
@@ -81,18 +75,31 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
 
         {/* IMAGE */}
-        <div className="relative flex justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end xl:mt ">
-          <img
-            className="border-2 rounded-2xl border-primary-100"
-            alt="home-pageGraphic"
-            src="/src/assets/djordje1.jpg"
-          />
-          <div className="absolute top-0 right-0 mt-2 mr-3">
+        <div
+          className={classNames(
+            isAboveMediumScreens ? "" : "mt-10",
+            " flex justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end xl:mt "
+          )}
+        >
+          <div className="relative">
             <img
-              className="w-16 h-16 "
+              className="border-2 rounded-2xl border-primary-100"
               alt="home-pageGraphic"
-              src="/src/assets/ikonica.png"
+              src="/src/assets/djordje1.jpg"
             />
+            <div
+              className={classNames(
+                isAboveMediumScreens
+                  ? "absolute top-0 right-0 mt-2 mr-3"
+                  : "absolute top-0 right-0 mt-2 mr-5"
+              )}
+            >
+              <img
+                className="w-16 h-16 "
+                alt="home-pageGraphic"
+                src="/src/assets/ikonica.png"
+              />
+            </div>
           </div>
         </div>
       </motion.div>

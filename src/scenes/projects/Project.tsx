@@ -1,3 +1,5 @@
+import useMediaQuery from "@/hooks/useMediaQuery";
+import { classNames } from "@/utils/helpers";
 import { motion } from "framer-motion";
 
 const childVariant = {
@@ -13,10 +15,14 @@ type Props = {
 };
 
 const Project = ({ icon, title, description, link }: Props) => {
+  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <motion.div
       variants={childVariant}
-      className="w-1/3 min-h-full px-5 py-16 mt-5 text-center border-2 border-gray-100 rounded-md"
+      className={classNames(
+        isAboveMediumScreens ? "w-1/3" : "w-full",
+        "max-h-[325px] px-5 py-16 mt-5 text-center border-2 border-gray-100 rounded-md"
+      )}
     >
       <div className="flex justify-center mb-4">
         <div className="p-4 border-2 border-gray-100 rounded-full bg-primary-100">

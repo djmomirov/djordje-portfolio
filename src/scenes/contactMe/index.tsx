@@ -2,13 +2,15 @@ import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
+import { classNames } from "@/utils/helpers";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
 const ContactMe = ({ setSelectedPage }: Props) => {
+  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
   px-5 py-3 placeholder-white`;
 
@@ -143,9 +145,9 @@ const ContactMe = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
+            <div className="flex flex-row justify-center w-full">
               <img
-                className="w-full ml-10"
+                className={classNames(isAboveMediumScreens ? "ml-10" : "", "")}
                 alt="contact-us-page-graphic"
                 src="/src/assets/lookingForJob.png"
               />

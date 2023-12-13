@@ -13,7 +13,7 @@ const projects: Array<ProjectType> = [
     icon: <FontAwesomeIcon icon={faDumbbell} size="lg" />,
     title: "Fitnes App",
     description:
-      "Responsive, single-page site for seamless UX on all devices. Simplified design, optimal accessibility, and engaging content.",
+      "Responsive, simple design, single-page website for seamless UX on all devices.",
     link: "https://github.com/djmomirov/fitness-app",
   },
   {
