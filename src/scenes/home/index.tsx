@@ -77,13 +77,13 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
 
         {/* IMAGE */}
-        <div className="relative flex justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end">
+        <div className="relative flex justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end xl:mt ">
           <img
-            className="border-2 rounded-lg border-secondary-500"
+            className="border-2 rounded-2xl border-primary-100"
             alt="home-pageGraphic"
             src="/src/assets/djordje1.jpg"
           />
-          <div className="absolute top-0 right-0">
+          <div className="absolute top-0 right-0 mt-2 mr-3">
             <img
               className="w-16 h-16 "
               alt="home-pageGraphic"

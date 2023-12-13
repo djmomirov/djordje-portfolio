@@ -1,5 +1,3 @@
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 
 const childVariant = {
@@ -11,14 +9,14 @@ type Props = {
   icon: JSX.Element;
   title: string;
   description: string;
-  setSelectedPage: (value: SelectedPage) => void;
+  link: string;
 };
 
-const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
+const Benefit = ({ icon, title, description, link }: Props) => {
   return (
     <motion.div
       variants={childVariant}
-      className="px-5 py-16 mt-5 text-center border-2 border-gray-100 rounded-md"
+      className="w-1/3 min-h-full px-5 py-16 mt-5 text-center border-2 border-gray-100 rounded-md"
     >
       <div className="flex justify-center mb-4">
         <div className="p-4 border-2 border-gray-100 rounded-full bg-primary-100">
@@ -28,13 +26,13 @@ const Benefit = ({ icon, title, description, setSelectedPage }: Props) => {
 
       <h4 className="font-bold">{title}</h4>
       <p className="my-3">{description}</p>
-      <AnchorLink
-        className="text-sm font-bold underline text-primary-500 hover:text-secondary-500"
-        onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-        href={`#${SelectedPage.ContactUs}`}
+      <a
+        className="text-sm font-bold underline text-primary-500 hover:text-secondary-500 hover:cursor-pointer"
+        target="_blank"
+        href={link}
       >
-        <p>Learn More</p>
-      </AnchorLink>
+        <p>Check it out</p>
+      </a>
     </motion.div>
   );
 };

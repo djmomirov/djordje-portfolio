@@ -9,6 +9,7 @@ export interface BenefitType {
   icon: JSX.Element;
   title: string;
   description: string;
+  link: string;
 }
 
 export interface ClassType {

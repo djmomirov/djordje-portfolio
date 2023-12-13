@@ -1,8 +1,4 @@
-import {
-  AcademicCapIcon,
-  HomeModernIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/solid";
+import { CalculatorIcon, PuzzlePieceIcon } from "@heroicons/react/24/solid";
 import { BenefitType, SelectedPage } from "@/shared/types";
 
 import ActionButton from "../../hooks/ActionButton";
@@ -10,25 +6,32 @@ import Benefit from "./Benefit";
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 import HText from "@/shared/HText";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 
 const benefits: Array<BenefitType> = [
   {
-    icon: <HomeModernIcon className="w-6 h-6" />,
-    title: "State of the Art Facilities",
+    icon: <FontAwesomeIcon icon={faDumbbell} size="lg" />,
+    title: "Fitnes App",
     description:
-      "Neque adipiscing amet amet enim. Feugiat dolor enim fermentum in a in lectus pellentesque. Ullamcorper et.",
+      "Responsive, single-page site for seamless UX on all devices. Simplified design, optimal accessibility, and engaging content.",
+    link: "https://github.com/djmomirov/fitness-app",
   },
   {
-    icon: <UserGroupIcon className="w-6 h-6" />,
-    title: "100's of Diverse Classes",
+    icon: <PuzzlePieceIcon className="w-6 h-6" />,
+    title: "Tic-Tac-Toe Game",
     description:
-      "Eu ipsum id egestas risus tempus enim semper felis quis. Nec consectetur ac venenatis facilisi est. Eget ac turpis id.",
+      "JS/React Tic Tac Toe: Interactive game with real-time updates and dynamic UI.",
+
+    link: "https://github.com/djmomirov/tic-tac-toe",
   },
   {
-    icon: <AcademicCapIcon className="w-6 h-6" />,
-    title: "Expert and Pro Trainers",
+    icon: <CalculatorIcon className="w-6 h-6" />,
+    title: "Investment-calculator",
     description:
-      "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
+      "Investment Calculator: Plan and visualize returns with this efficient financial tool.",
+
+    link: "https://github.com/djmomirov/investment-calculator",
   },
 ];
 
@@ -61,11 +64,13 @@ const Benefits = ({ setSelectedPage }: Props) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <HText>MORE THAN JUST GYM.</HText>
+          <HText>MY PROJECTS</HText>
           <p className="my-5 text-sm">
-            We provide world class fitness equipment, trainers and classes to
-            get you to your ultimate fitness goals with ease. We provide true
-            care into each and every member.
+            Explore a selection of projects I created while learning React,
+            showcasing both my learning journey and practical implementation of
+            the technology. Here you can see a selection of my React projects
+            that showcase my proficiency in web development. Click the links to
+            view the GitHub repositories and explore the code.
           </p>
         </motion.div>
 
@@ -83,7 +88,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
               icon={benefit.icon}
               title={benefit.title}
               description={benefit.description}
-              setSelectedPage={setSelectedPage}
+              link={benefit.link}
             />
           ))}
         </motion.div>
