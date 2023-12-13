@@ -7,6 +7,7 @@ import HText from "@/shared/HText";
 import Project from "./Project";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import CodingImage from "@/assets/coding.png";
 
 const projects: Array<ProjectType> = [
   {
@@ -98,7 +99,7 @@ const MyProjects = ({ setSelectedPage }: Props) => {
           <img
             className="w-1/4 mx-auto h-1/4"
             alt="projects-page-graphic"
-            src="/src/assets/coding.png"
+            src={CodingImage}
           />
 
           {/* DESCRIPTION */}

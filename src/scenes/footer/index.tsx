@@ -1,9 +1,11 @@
+import BuildconLogo from "@/assets/logoBuildcon.png";
+
 const Footer = () => {
   return (
     <footer className="py-16 bg-primary-100">
       <div className="w-5/6 gap-16 mx-auto justify-content md:flex">
         <div className="mt-16 basis-1/2 md:mt-0">
-          <img alt="logo" src="/src/assets/logoBuildcon.png" />
+          <img alt="logo" src={BuildconLogo} />
           <p className="my-5">
             This web appplication is made by Djordje Momirov
           </p>

@@ -7,6 +7,8 @@ import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { classNames } from "@/utils/helpers";
+import Djordje from "@/assets/djordje1.jpg";
+import Ikonica from "@/assets/ikonica.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -85,7 +87,7 @@ const Home = ({ setSelectedPage }: Props) => {
             <img
               className="border-2 rounded-2xl border-primary-100"
               alt="home-pageGraphic"
-              src="/src/assets/djordje1.jpg"
+              src={Djordje}
             />
             <div
               className={classNames(
@@ -97,7 +99,7 @@ const Home = ({ setSelectedPage }: Props) => {
               <img
                 className="w-16 h-16 "
                 alt="home-pageGraphic"
-                src="/src/assets/ikonica.png"
+                src={Ikonica}
               />
             </div>
           </div>

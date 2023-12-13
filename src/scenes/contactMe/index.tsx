@@ -1,9 +1,10 @@
 import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
+import { classNames } from "@/utils/helpers";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { classNames } from "@/utils/helpers";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import LookingForJob from "@/assets/lookingForJob.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -147,9 +148,9 @@ const ContactMe = ({ setSelectedPage }: Props) => {
           >
             <div className="flex flex-row justify-center w-full">
               <img
-                className={classNames(isAboveMediumScreens ? "ml-10" : "", "")}
+                className={classNames(isAboveMediumScreens ? "ml-10" : "")}
                 alt="contact-us-page-graphic"
-                src="/src/assets/lookingForJob.png"
+                src={LookingForJob}
               />
             </div>
           </motion.div>

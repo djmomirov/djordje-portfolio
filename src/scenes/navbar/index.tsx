@@ -5,6 +5,7 @@ import Link from "./Link";
 import { SelectedPage } from "../../shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
+import BuildconLogo from "@/assets/logoBuildcon.png";
 
 type Props = {
   isTopOfPage: boolean;
@@ -26,11 +27,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT SIDE */}
-            <img
-              className="w-20 h-8"
-              src="/src/assets/logoBuildcon.png"
-              alt="logo"
-            />
+            <img className="w-20 h-8" src={BuildconLogo} alt="logo" />
 
             {/* RIGHT SIDE */}
             {isAboveMediaScreens ? (
