@@ -12,7 +12,7 @@ type Props = {
   link: string;
 };
 
-const Benefit = ({ icon, title, description, link }: Props) => {
+const Project = ({ icon, title, description, link }: Props) => {
   return (
     <motion.div
       variants={childVariant}
@@ -37,4 +37,4 @@ const Benefit = ({ icon, title, description, link }: Props) => {
   );
 };
 
-export default Benefit;
+export default Project;

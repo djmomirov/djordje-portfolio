@@ -1,7 +1,5 @@
 import ActionButton from "../../hooks/ActionButton";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import HomePageGraphic from "@/assets/HomePageGraphic.png";
-import HomePageText from "@/assets/HomePageText.png";
 import { SelectedPage } from "@/shared/types";
 import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
@@ -37,15 +35,21 @@ const Home = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <div className="relative">
+            {/* <div className="relative">
               <div>
-                {/* <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext"> */}
+                <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-portfoliotext">
+                  <div className="text-[57px]">Djordje Momirov</div>
+                </div>
+              </div>
+            </div> */}
+            <div className="relative">
+              <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-portfoliotext">
                 <div className="text-[57px]">Djordje Momirov</div>
               </div>
             </div>
 
-            <p className="mt-8 text-sm">
-              I would like to apply for the position of Junior Front-End
+            <p className="mt-8 text-xl">
+              I would like to apply for the position of Junior Front-End
               Developer and I think by this web application you are going to
               have the information of my knowledge about front-end developing.
             </p>
@@ -68,8 +72,8 @@ const Home = ({ setSelectedPage }: Props) => {
             </ActionButton>
             <AnchorLink
               className="text-sm font-bold underline text-primary-500 hover:text-secondary-500"
-              onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-              href={`#${SelectedPage.ContactUs}`}
+              onClick={() => setSelectedPage(SelectedPage.ContactMe)}
+              href={`#${SelectedPage.contactme}`}
             >
               <p>Learn More</p>
             </AnchorLink>

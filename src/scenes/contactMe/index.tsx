@@ -1,14 +1,14 @@
-import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const ContactUs = ({ setSelectedPage }: Props) => {
+const ContactMe = ({ setSelectedPage }: Props) => {
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
   px-5 py-3 placeholder-white`;
 
@@ -26,9 +26,9 @@ const ContactUs = ({ setSelectedPage }: Props) => {
   };
 
   return (
-    <section id="contactus" className="w-5/6 pt-24 pb-32 mx-auto">
+    <section id="contactme" className="w-5/6 pt-24 pb-32 mx-auto">
       <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
+        onViewportEnter={() => setSelectedPage(SelectedPage.ContactMe)}
       >
         {/* HEADER */}
         <motion.div
@@ -43,12 +43,14 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           }}
         >
           <HText>
-            <span className="text-primary-500">JOIN NOW</span> TO GET IN SHAPE
+            <span className="text-primary-500">CONTACT</span> IF YOU WANT TO
+            HIRE ME
           </HText>
           <p className="my-5">
-            Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl
-            sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
-            adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis.
+            Please take a moment to complete this form by providing your
+            relevant details. Once submitted, the information will be securely
+            transmitted to my email. I am looking forward to receiving your
+            response and connecting with you soon.
           </p>
         </motion.div>
 
@@ -141,11 +143,11 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
+            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
               <img
-                className="w-full"
+                className="w-full ml-10"
                 alt="contact-us-page-graphic"
-                src={ContactUsPageGraphic}
+                src="/src/assets/lookingForJob.png"
               />
             </div>
           </motion.div>
@@ -155,4 +157,4 @@ const ContactUs = ({ setSelectedPage }: Props) => {
   );
 };
 
-export default ContactUs;
+export default ContactMe;

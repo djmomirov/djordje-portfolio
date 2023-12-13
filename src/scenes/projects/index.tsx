@@ -1,15 +1,14 @@
 import { CalculatorIcon, PuzzlePieceIcon } from "@heroicons/react/24/solid";
-import { BenefitType, SelectedPage } from "@/shared/types";
+import { ProjectType, SelectedPage } from "@/shared/types";
 
 import ActionButton from "../../hooks/ActionButton";
-import Benefit from "./Benefit";
-import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
-import HText from "@/shared/HText";
-import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HText from "@/shared/HText";
+import Project from "./Project";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
-const benefits: Array<BenefitType> = [
+const projects: Array<ProjectType> = [
   {
     icon: <FontAwesomeIcon icon={faDumbbell} size="lg" />,
     title: "Fitnes App",
@@ -46,11 +45,11 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Benefits = ({ setSelectedPage }: Props) => {
+const MyProjects = ({ setSelectedPage }: Props) => {
   return (
-    <section id="benefits" className="w-5/6 min-h-full py-20 mx-auto">
+    <section id="myprojects" className="w-5/6 min-h-full py-20 mx-auto">
       <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
+        onViewportEnter={() => setSelectedPage(SelectedPage.MyProjects)}
       >
         {/* HEADER */}
         <motion.div
@@ -65,7 +64,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
           }}
         >
           <HText>MY PROJECTS</HText>
-          <p className="my-5 text-sm">
+          <p className="my-5 text-xl">
             Explore a selection of projects I created while learning React,
             showcasing both my learning journey and practical implementation of
             the technology. Here you can see a selection of my React projects
@@ -82,8 +81,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
           viewport={{ once: true, amount: 0.5 }}
           variants={container}
         >
-          {benefits.map((benefit: BenefitType) => (
-            <Benefit
+          {projects.map((benefit: ProjectType) => (
+            <Project
               key={benefit.title}
               icon={benefit.icon}
               title={benefit.title}
@@ -97,9 +96,9 @@ const Benefits = ({ setSelectedPage }: Props) => {
         <div className="items-center justify-between gap-20 mt-16 md:mt-28 md:flex">
           {/* GRAPHIC */}
           <img
-            className="mx-auto"
-            alt="benefits-page-graphic"
-            src={BenefitsPageGraphic}
+            className="w-1/4 mx-auto h-1/4"
+            alt="projects-page-graphic"
+            src="/src/assets/coding.png"
           />
 
           {/* DESCRIPTION */}
@@ -118,8 +117,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
                   }}
                 >
                   <HText>
-                    MILLIONS OF HAPPY MEMBERS GETTING{" "}
-                    <span className="text-primary-500">FIT</span>
+                    WHAT I HAVE LEARNED DURING THIS{" "}
+                    <span className="text-primary-500">JOURNEY</span>
                   </HText>
                 </motion.div>
               </div>
@@ -137,18 +136,13 @@ const Benefits = ({ setSelectedPage }: Props) => {
               }}
             >
               <p className="my-5">
-                Nascetur aenean massa auctor tincidunt. Iaculis potenti amet
-                egestas ultrices consectetur adipiscing ultricies enim. Pulvinar
-                fames vitae vitae quis. Quis amet vulputate tincidunt at in
-                nulla nec. Consequat sed facilisis dui sit egestas ultrices
-                tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
-                Felis orci diam odio.
+                Focused on React and JS, I learn by doing projects, mastering
+                Git, Tailwind, HTML, CSS, and front-end design. Exploring
+                TypeScript for enhanced development.
               </p>
               <p className="mb-5">
-                Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-                tellus quam porttitor. Mauris velit euismod elementum arcu neque
-                facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-                enim mattis odio in risus nunc.
+                Eager to contribute and grow. Excited about the possibility of
+                working together I hope to join your team soon!
               </p>
             </motion.div>
 
@@ -156,7 +150,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
             <div className="relative mt-16">
               <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
                 <ActionButton setSelectedPage={setSelectedPage}>
-                  Join Now
+                  Contact me
                 </ActionButton>
               </div>
             </div>
@@ -167,4 +161,4 @@ const Benefits = ({ setSelectedPage }: Props) => {
   );
 };
 
-export default Benefits;
+export default MyProjects;
