@@ -1,10 +1,10 @@
 import HText from "@/shared/HText";
+import LookingForJob from "@/assets/lookingForJob.png";
 import { SelectedPage } from "@/shared/types";
 import { classNames } from "@/utils/helpers";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import LookingForJob from "@/assets/lookingForJob.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -73,7 +73,7 @@ const ContactMe = ({ setSelectedPage }: Props) => {
             <form
               target="_blank"
               onSubmit={onSubmit}
-              action="https://formsubmit.co/djordje.momirov95@gmail.com"
+              action="https://formsubmit.co/fcdd7c42c93fa35999157716e2455c71"
               method="POST"
             >
               {errors.name && (
